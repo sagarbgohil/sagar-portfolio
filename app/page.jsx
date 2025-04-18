@@ -15,12 +15,11 @@ const Home = () => {
               <br /> <span className="text-accent">Sagar Gohil</span>
               <br />
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[400px] mb-9 text-white/80">
               I am a backend engineer with a passion for building scalable and
               efficient systems. I have experience in various programming
               languages and frameworks, and I am always eager to learn new
-              technologies. I enjoy solving complex problems and working in a
-              collaborative environment.
+              technologies.
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8">
