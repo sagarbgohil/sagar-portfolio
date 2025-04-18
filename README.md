@@ -4,7 +4,7 @@ Welcome to the **Sagar Gohil Project** repository!
 
 ## Features
 
-- **Feature 1**: [Home Page]
+- **Feature 1**: Home Page
 
 ## Installation
 
@@ -18,14 +18,14 @@ Welcome to the **Sagar Gohil Project** repository!
    ```
 3. Install dependencies:
    ```bash
-   [npm i]
+   npm i
    ```
 
 ## Usage
 
 1. Start the application:
    ```bash
-   [npm run dev]
+   npm run dev
    ```
 2. Open your browser and navigate to:
    ```
