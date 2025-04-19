@@ -1,8 +1,12 @@
 import { JetBrains_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import "./globals.css";
+
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import HeadElements from "@/components/HeadElements";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -26,6 +30,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <HeadElements />
+      <GoogleAnalytics gaId="G-MG5JRSF0RR" />
       <body className={`${jetBrainsMono.className}`}>
         <Header />
         <StairTransition />
