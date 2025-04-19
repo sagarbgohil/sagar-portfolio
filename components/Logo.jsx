@@ -5,9 +5,12 @@ const Logo = () => {
   return (
     <div>
       <Link href="/">
-        <h1 className="text-4xl font-semibold">
-          SG<span className="text-accent">.</span>
+        <h1 className="hidden">
+          Sagar Gohil | Backend Engineer and Tech Enthusiast
         </h1>
+        <h2 className="h1 text-4xl font-semibold">
+          SG<span className="text-accent">.</span>
+        </h2>
       </Link>
     </div>
   );
