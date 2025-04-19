@@ -16,7 +16,7 @@ const Home = () => {
               <br /> <span className="text-accent">Sagar Gohil</span>
               <br />
             </h1>
-            <p className="max-w-[400px] mb-9 text-white/80">
+            <p className="max-w-[350px] p-4 mb-9 text-white/80">
               I am a Software Engineer with a passion for building scalable and
               efficient systems. I have experience in various programming
               languages and frameworks, and I am always eager to learn new
@@ -35,7 +35,7 @@ const Home = () => {
 
               <div className="mb-8 xl:mb-0">
                 <Socials
-                  containerStyles="flex gap-6"
+                  containerStyles="flex flex-wrap justify-center gap-4 sm:gap-6"
                   iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hoover:bg-accent hover:text-primary hover:transition-all duration-500"
                 />
               </div>
