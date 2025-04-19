@@ -1,24 +1,18 @@
 "use client";
 
+import { links } from "@/lib/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-
-const links = [
-  { name: "Home", href: "/" },
-  { name: "About me", href: "/about-me" },
-  { name: "Skills", href: "/skills" },
-  { name: "Experience", href: "/experience" },
-];
 
 const Nav = () => {
   const pathName = usePathname();
 
   return (
     <nav className="flex gap-8">
-      {links.map((link) => (
+      {links.map((link, index) => (
         <Link
-          key={link.name}
+          key={index}
           href={link.href}
           className={`${
             pathName === link.href && "text-accent border-b-2 border-accent"

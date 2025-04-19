@@ -13,13 +13,7 @@ import {
 import { CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
 import Logo from "./Logo";
-
-const links = [
-  { name: "Home", href: "/" },
-  { name: "About me", href: "/about-me" },
-  { name: "Skills", href: "/skills" },
-  { name: "Experience", href: "/experience" },
-];
+import { links } from "@/lib/constants";
 
 const MobileNav = () => {
   const pathName = usePathname();
@@ -41,16 +35,16 @@ const MobileNav = () => {
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, index) => (
             <SheetClose asChild>
-              <Link href={link.href} key={index}>
-                <div
-                  className={`${
-                    link.href === pathName &&
-                    "text-accent border-b-2 border-accent"
-                  }
+              <Link
+                href={link.href}
+                key={index}
+                className={`${
+                  link.href === pathName &&
+                  "text-accent border-b-2 border-accent"
+                }
                     text-xl capitalize hover:text-accent transition-all`}
-                >
-                  {link.name}
-                </div>
+              >
+                {link.name}
               </Link>
             </SheetClose>
           ))}
