@@ -1,12 +1,11 @@
 "use client";
 
 import Head from "next/head";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Canonical = () => {
-  const router = useRouter();
-  const canonicalUrl = `https://sagargohil.dev${router.asPath}`;
-
+  const pathName = usePathname();
+  const canonicalUrl = `https://sagargohil.dev${pathName}`;
   return (
     <Head>
       <link rel="canonical" href={canonicalUrl.split("?")[0]} />

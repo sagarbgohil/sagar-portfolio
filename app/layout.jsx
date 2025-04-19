@@ -16,7 +16,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Sagar Gohil | Backend Engineer & Tech Enthusiast",
+  title: "Sagar Gohil | Backend Engineer and Tech Enthusiast",
   description:
     "Passionate Backend Engineer with a love for technology, clean architecture, and strategy — both in software development and chess.",
   keywords:
@@ -33,8 +33,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <HeadElements />
-      <Canonical />
       <GoogleAnalytics gaId="G-MG5JRSF0RR" />
+      <Canonical />
+
       <body className={`${jetBrainsMono.className}`}>
         <Header />
         <StairTransition />

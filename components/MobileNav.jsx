@@ -21,7 +21,9 @@ const MobileNav = () => {
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
-        <CiMenuFries className="text-[32px] text-accent" />
+        <div aria-label="Menu">
+          <CiMenuFries className="text-[32px] text-accent" />
+        </div>
       </SheetTrigger>
       <SheetContent className="flex flex-col gap-4">
         <SheetHeader className="hidden">

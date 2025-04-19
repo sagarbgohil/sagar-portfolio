@@ -26,6 +26,7 @@ const Photo = () => {
             src="/assets/photo-trans.png"
             priority
             quality={100}
+            sizes="(max-width: 768px) 298px, 498px"
             fill
             alt="Sagar Gohil"
             className="object-contain"
