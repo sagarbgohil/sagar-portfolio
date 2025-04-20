@@ -10,7 +10,7 @@ const TabContent = ({ data }) => {
       </p>
 
       {data.items.length > 0 && (
-        <ScrollArea className="h-[400px]">
+        <ScrollArea className="h-[450px]">
           <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
             {data.items.map((item, index) => (
               <li
