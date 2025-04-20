@@ -1,5 +1,4 @@
 import React from "react";
-import { ScrollArea } from "./ui/scroll-area";
 import {
   Tooltip,
   TooltipContent,
@@ -16,7 +15,6 @@ const TabContentSkills = ({ data }) => {
       </p>
 
       {data.items.length > 0 && (
-        // <ScrollArea className="h-[400px]">
         <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
           {data.items.map((item, index) => (
             <li
@@ -40,7 +38,6 @@ const TabContentSkills = ({ data }) => {
             </li>
           ))}
         </ul>
-        // </ScrollArea>
       )}
     </div>
   );

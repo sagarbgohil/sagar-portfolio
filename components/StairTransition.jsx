@@ -1,5 +1,4 @@
 "use client";
-// This is a client component
 
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
