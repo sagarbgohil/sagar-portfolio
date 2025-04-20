@@ -38,7 +38,7 @@ const Contact = () => {
                 placeholder="Type your message here..."
               />
 
-              <Button size="md" className="w-[30%] mx-auto">
+              <Button size="md" className="w-[40%] mx-auto">
                 Send Message
               </Button>
             </form>

@@ -9,7 +9,7 @@ const TabContentAbout = ({ data }) => {
       </p>
 
       {data.items.length > 0 && (
-        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+        <ul className="grid grid-cols-1 lg:grid-cols-1 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
           {data.items.map((item, index) => (
             <li
               key={index}
