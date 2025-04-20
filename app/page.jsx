@@ -2,6 +2,7 @@ import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
+import { Link } from "lucide-react";
 import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
@@ -24,19 +25,24 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                variant={"outline"}
-                size="lg"
-                className="uppercase flex items-center gap-2"
+              <a
+                href="https://drive.google.com/file/d/1tm7guZRwzu5j4vlUn0H4kwnSYXhnAbXW/view?usp=sharing"
+                target="_blank"
               >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
+                <Button
+                  variant={"outline"}
+                  size="lg"
+                  className="uppercase flex items-center gap-2"
+                >
+                  <span>Download CV</span>
+                  <FiDownload className="text-xl" />
+                </Button>
+              </a>
 
               <div className="mb-8 xl:mb-0">
                 <Socials
                   containerStyles="flex flex-wrap justify-center gap-4 sm:gap-6"
-                  iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hoover:bg-accent hover:text-primary hover:transition-all duration-500"
+                  iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
                 />
               </div>
             </div>
