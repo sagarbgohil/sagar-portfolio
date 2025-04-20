@@ -1,5 +1,4 @@
 import React from "react";
-import { ScrollArea } from "./ui/scroll-area";
 
 const TabContentAbout = ({ data }) => {
   return (
