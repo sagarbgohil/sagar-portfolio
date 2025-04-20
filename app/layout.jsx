@@ -16,11 +16,11 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Sagar Gohil | Backend Engineer and Tech Enthusiast",
+  title: "Sagar Gohil | Software Engineer and Tech Enthusiast",
   description:
-    "Passionate Backend Engineer with a love for technology, clean architecture, and strategy — both in software development and chess.",
+    "Passionate Software Engineer with a love for technology, clean architecture, and strategy — both in software development and chess.",
   keywords:
-    "Sagar Gohil, Portfolio, Backend Engineer, Technology Enthusiast, Chess Player",
+    "Sagar Gohil, Portfolio, Software Engineer, Backend Engineer, Technology Enthusiast, Chess Player",
   authors: [
     {
       name: "Sagar Gohil",
