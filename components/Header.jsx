@@ -8,7 +8,7 @@ import Logo from "./Logo";
 const Header = () => {
   return (
     <>
-      <header className="p-4 py-8 xl:py-12 text-white">
+      <header className="py-8 xl:py-12 text-white">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <Logo />
