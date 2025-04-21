@@ -17,6 +17,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: "Sagar Gohil | Software Engineer and Tech Enthusiast",
+  favicon: "/favicon.ico",
   description:
     "Passionate Software Engineer with a love for technology, clean architecture, and strategy — both in software development and chess.",
   keywords:
