@@ -61,8 +61,8 @@ const Contact = () => {
                 <p className="text-center text-green-400 mt-4">{response}</p>
               )}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                <div className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex h-full flex-col gap-2">
                   <Input
                     placeholder="First Name"
                     {...register("firstName", {
@@ -84,7 +84,7 @@ const Contact = () => {
                   )}
                 </div>
 
-                <div>
+                <div className="flex h-full flex-col gap-2">
                   <Input
                     placeholder="Last Name"
                     {...register("lastName", {
@@ -106,7 +106,7 @@ const Contact = () => {
                   )}
                 </div>
 
-                <div>
+                <div className="flex h-full flex-col gap-2">
                   <Input
                     placeholder="Email"
                     type="email"
@@ -125,14 +125,14 @@ const Contact = () => {
                   )}
                 </div>
 
-                <div>
+                <div className="flex h-full flex-col gap-2">
                   <Input
                     placeholder="Phone Number"
                     {...register("phone", {
                       required: "Phone is required",
                       pattern: {
-                        value: /^[0-9]{10}$/,
-                        message: "Phone must be 10 digits",
+                        value: /^[0-9]{12}$/,
+                        message: "Phone must be 12 digits",
                       },
                     })}
                   />
@@ -144,7 +144,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="flex h-full flex-col gap-2">
                 <Textarea
                   placeholder="Type your message here..."
                   className="h-[200px]"
@@ -167,14 +167,16 @@ const Contact = () => {
                 )}
               </div>
 
-              <Button
-                type="submit"
-                size="md"
-                className="w-[40%] mx-auto"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </Button>
+              <div className="flex h-full flex-col gap-2">
+                <Button
+                  type="submit"
+                  size="md"
+                  className="w-[40%] mx-auto"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </div>
             </form>
           </div>
         </div>
