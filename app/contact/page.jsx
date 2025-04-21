@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-[80vh] flex flex-col items-center py-12 xl:py-0">
+    <section className="min-h-[80vh] flex flex-col items-center py-12 xl:py-0 pt-0">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{

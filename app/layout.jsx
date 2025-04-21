@@ -8,6 +8,7 @@ import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import HeadElements from "@/components/HeadElements";
 import Canonical from "@/components/Canonical";
+import StickyWidget from "@/components/StickWidget";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -40,7 +41,10 @@ export default function RootLayout({ children }) {
       <body className={`${jetBrainsMono.className} pl-8 pr-8`}>
         <Header />
         <StairTransition />
-        <PageTransition>{children}</PageTransition>
+        <PageTransition>
+          {children}
+          <StickyWidget />
+        </PageTransition>
       </body>
     </html>
   );
