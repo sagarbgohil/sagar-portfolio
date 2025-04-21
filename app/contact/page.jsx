@@ -13,8 +13,10 @@ const Contact = () => {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
+  const messageValue = watch("message") || "";
 
   const [response, setResponse] = useState("");
 
@@ -160,6 +162,9 @@ const Contact = () => {
                     },
                   })}
                 />
+                <div className="text-sm text-white/60 text-right">
+                  <span>{messageValue.length} / 1000 characters</span>
+                </div>
                 {errors.message && (
                   <p className="text-red-500 text-sm">
                     {errors.message.message}
