@@ -2,6 +2,7 @@ import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
+import { siteData } from "@/lib/constants";
 import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
@@ -24,10 +25,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a
-                href="https://drive.google.com/file/d/1tm7guZRwzu5j4vlUn0H4kwnSYXhnAbXW/view?usp=sharing"
-                target="_blank"
-              >
+              <a href={siteData.resumeLink} target="_blank">
                 <Button
                   variant={"outline"}
                   size="lg"
