@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-[80vh] flex flex-col items-center p-4 py-12 xl:py-0">
+    <section className="min-h-[80vh] flex flex-col items-center py-12 xl:py-0">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -176,7 +176,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   size="md"
-                  className="w-[40%] mx-auto"
+                  className="w-[80%] md:w-[40%] mx-auto"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
