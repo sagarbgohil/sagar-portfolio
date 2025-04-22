@@ -21,8 +21,8 @@ const MobileNav = () => {
   const navLinks = [
     ...links,
     {
-      name: "Contact me",
-      href: "/contact",
+      name: "Hire me",
+      href: "/hire",
     },
   ];
 
