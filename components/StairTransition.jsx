@@ -18,10 +18,14 @@ const StairTransition = () => {
 
           <motion.div
             className="h-screen w-screen fixed bg-primary top-0 pointer-events-none"
-            initial={{ opacity: 1 }}
+            initial={{
+              y: "100%",
+              opacity: 1,
+            }}
             animate={{
+              y: 0,
               opacity: 0,
-              transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
+              transition: { duration: 0.4, ease: "easeInOut" },
             }}
             layout={false}
           />
