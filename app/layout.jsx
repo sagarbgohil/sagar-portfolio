@@ -1,12 +1,11 @@
 import { JetBrains_Mono } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 
 import Header from "@/components/Header";
 import HeadElements from "@/components/HeadElements";
 import StickyWidget from "@/components/StickWidget";
-import { siteData } from "@/lib/constants";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -29,22 +28,18 @@ export const metadata = {
     },
   ],
   creator: "Sagar Gohil",
-  alternates: {
-    canonical: siteData.baseUrl,
-  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <HeadElements />
-      <GoogleAnalytics gaId="G-MG5JRSF0RR" />
 
       <body className={`${jetBrainsMono.className} px-8`}>
         <Header />
-        {/* <StairTransition /> */}
         {children}
         <StickyWidget />
+        <GoogleAnalytics />
       </body>
     </html>
   );
