@@ -22,6 +22,7 @@ const Projects = () => {
               {project.link && (
                 <Link
                   href={project.link}
+                  aria-label="View Project"
                   className="w-[70px] h-[70px] rounded-full group-hover:text-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
                 >
                   <BsArrowDownRight className="text-3xl" />
