@@ -34,6 +34,7 @@ const Stairs = () => {
               ease: "easeInOut",
               delay: reverseIndex(index) * 0.1,
             }}
+            layout={false}
             className="h-full w-full bg-white relative"
           />
         );
