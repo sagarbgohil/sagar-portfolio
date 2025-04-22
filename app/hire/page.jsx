@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { useForm, Controller } from "react-hook-form";
 
 import { Input } from "@/components/ui/input";
@@ -155,7 +154,10 @@ const Contact = () => {
                     defaultValue={field.value}
                     value={field.value}
                   >
-                    <SelectTrigger className="w-full">
+                    <SelectTrigger
+                      className="w-full"
+                      aria-label="Select a service"
+                    >
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
