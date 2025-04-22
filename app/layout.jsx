@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
 
       <body className={`${jetBrainsMono.className} px-8`}>
         <Header />
-        <StairTransition />
+        {/* <StairTransition /> */}
         {children}
         <StickyWidget />
       </body>
