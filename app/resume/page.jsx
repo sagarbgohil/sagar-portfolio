@@ -22,6 +22,7 @@ const Resume = () => {
           ease: "easeIn",
         },
       }}
+      layout={false}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto">

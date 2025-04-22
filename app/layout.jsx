@@ -14,6 +14,7 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weights: ["100", "200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-jetBrainsMono",
+  display: "swap",
 });
 
 export const metadata = {
@@ -38,13 +39,13 @@ export default function RootLayout({ children }) {
       <GoogleAnalytics gaId="G-MG5JRSF0RR" />
       <Canonical />
 
-      <body className={`${jetBrainsMono.className} pl-8 pr-8`}>
-        <Header />
-        <StairTransition />
-        <PageTransition>
-          {children}
+      <body className={`${jetBrainsMono.className}`}>
+        <div className="px-8">
+          <Header />
+          <StairTransition />
+          <PageTransition>{children}</PageTransition>
           <StickyWidget />
-        </PageTransition>
+        </div>
       </body>
     </html>
   );

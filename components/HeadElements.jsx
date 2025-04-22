@@ -7,6 +7,12 @@ const HeadElements = () => {
         name="google-site-verification"
         content="JAPyqdKsPqHnf16HHZVLzD0hHuoQvyDdZDFnnMyZRI0"
       />
+      <link
+        rel="preload"
+        as="image"
+        href="/assets/photo-trans.png"
+        imageSrcSet="/assets/photo-trans.png 1x"
+      />
     </head>
   );
 };

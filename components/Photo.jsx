@@ -13,26 +13,19 @@ const Photo = () => {
           opacity: 1,
           transition: { delay: 2, duration: 0.2, ease: "easeIn" },
         }}
+        layout={false}
       >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { delay: 2.4, duration: 0.2, ease: "easeInOut" },
-          }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
-        >
+        <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute">
           <Image
             src="/assets/photo-trans.png"
             priority
-            quality={100}
+            quality={75}
             sizes="(max-width: 768px) 298px, 498px"
             fill
             alt="Sagar Gohil"
             className="object-contain"
           />
-        </motion.div>
-
+        </div>
         <motion.svg
           className="w-[300px} xl:w-[506px] h-[300px] xl:h-[506px]"
           fill="transparent"
