@@ -11,7 +11,7 @@ const HeadElements = () => {
         rel="preload"
         as="image"
         href="/assets/photo-trans.png"
-        imageSrcSet="/assets/photo-trans.png 1x"
+        imageSrcSet="/assets/photo-trans.png"
       />
     </head>
   );
