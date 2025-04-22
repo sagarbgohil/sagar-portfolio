@@ -5,7 +5,6 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import HeadElements from "@/components/HeadElements";
-import Canonical from "@/components/Canonical";
 import StickyWidget from "@/components/StickWidget";
 import { siteData } from "@/lib/constants";
 
@@ -40,7 +39,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <HeadElements />
       <GoogleAnalytics gaId="G-MG5JRSF0RR" />
-      <Canonical />
 
       <body className={`${jetBrainsMono.className} px-8`}>
         <Header />

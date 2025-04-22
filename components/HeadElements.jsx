@@ -1,4 +1,5 @@
 import React from "react";
+import Canonical from "./Canonical";
 
 const HeadElements = () => {
   return (
@@ -13,6 +14,7 @@ const HeadElements = () => {
         href="/assets/photo-trans.png"
         imageSrcSet="/assets/photo-trans.png"
       />
+      <Canonical />
     </head>
   );
 };
