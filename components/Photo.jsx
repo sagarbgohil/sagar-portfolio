@@ -12,10 +12,10 @@ const Photo = () => {
           src="/assets/photo-trans.png"
           alt="Sagar Gohil"
           priority
-          width={498}
-          height={498}
+          fill
           quality={75}
-          className="object-contain w-full h-full"
+          sizes="(max-width: 768px) 298px, 498px"
+          className="object-contain"
         />
       </div>
 
