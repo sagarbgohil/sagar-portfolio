@@ -4,7 +4,6 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
-import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import HeadElements from "@/components/HeadElements";
 import Canonical from "@/components/Canonical";
@@ -39,13 +38,11 @@ export default function RootLayout({ children }) {
       <GoogleAnalytics gaId="G-MG5JRSF0RR" />
       <Canonical />
 
-      <body className={`${jetBrainsMono.className}`}>
-        <div className="px-8">
-          <Header />
-          <StairTransition />
-          <PageTransition>{children}</PageTransition>
-          <StickyWidget />
-        </div>
+      <body className={`${jetBrainsMono.className} px-8`}>
+        <Header />
+        <StairTransition />
+        {children}
+        <StickyWidget />
       </body>
     </html>
   );

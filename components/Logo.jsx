@@ -4,7 +4,7 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div>
+    <div className="w-[70px] h-[70px] relative">
       <Link href="/">
         <h1 className="hidden">
           Sagar Gohil | Software Engineer and Tech Enthusiast
@@ -14,7 +14,8 @@ const Logo = () => {
           alt="Sagar Gohil Logo"
           width={70}
           height={70}
-          className="h1"
+          priority
+          className="h1 object-contain"
         />
         {/* <h2 className="h1 text-4xl font-semibold">
           SG<span className="text-accent">.</span>
