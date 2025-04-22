@@ -1,16 +1,14 @@
 "use client";
 
-import Head from "next/head";
 import { usePathname } from "next/navigation";
 
+import { siteData } from "@/lib/constants";
+
 const Canonical = () => {
-  const pathName = usePathname();
-  const canonicalUrl = `https://sagargohil.dev${pathName}`;
-  return (
-    <Head>
-      <link rel="canonical" href={canonicalUrl.split("?")[0]} />
-    </Head>
-  );
+  const pathname = usePathname();
+  const canonicalUrl = `${siteData.baseUrl}${pathname === "/" ? "" : pathname}`;
+
+  return <link rel="canonical" href={canonicalUrl} />;
 };
 
 export default Canonical;

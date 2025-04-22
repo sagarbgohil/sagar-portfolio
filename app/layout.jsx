@@ -4,14 +4,13 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
-import StairTransition from "@/components/StairTransition";
 import HeadElements from "@/components/HeadElements";
-import Canonical from "@/components/Canonical";
 import StickyWidget from "@/components/StickWidget";
+import { siteData } from "@/lib/constants";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weights: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  weights: ["400", "600"],
   variable: "--font-jetBrainsMono",
   display: "swap",
 });
@@ -29,6 +28,10 @@ export const metadata = {
       url: "https://sagargohil.dev",
     },
   ],
+  creator: "Sagar Gohil",
+  alternates: {
+    canonical: siteData.baseUrl,
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -36,7 +39,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <HeadElements />
       <GoogleAnalytics gaId="G-MG5JRSF0RR" />
-      <Canonical />
 
       <body className={`${jetBrainsMono.className} px-8`}>
         <Header />

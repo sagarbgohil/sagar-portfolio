@@ -2,7 +2,6 @@
 
 import { stats } from "@/lib/constants";
 import React from "react";
-import CountUp from "react-countup";
 
 const Stats = () => {
   return (
@@ -15,15 +14,12 @@ const Stats = () => {
               className="flex-1 flex gap-4 items-center justify-center xl:justify-start"
             >
               <div>
-                <CountUp
-                  end={stat.num}
-                  duration={5}
-                  delay={2}
-                  className="text-4xl xl:text-6xl font-extrabold"
-                />
-                <span className="text-4xl xl:text-6xl font-extrabold text-accent">
-                  +
-                </span>
+                <p className="text-4xl xl:text-6xl font-extrabold">
+                  {stat.num}
+                  <span className="text-4xl xl:text-6xl font-extrabold text-accent">
+                    +
+                  </span>
+                </p>
               </div>
               <p
                 className={`${
