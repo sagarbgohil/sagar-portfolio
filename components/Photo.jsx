@@ -3,13 +3,14 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { siteData } from "@/lib/constants";
 
 const Photo = () => {
   return (
     <div className="relative flex items-center justify-center">
       <div className="relative w-[298px] h-[298px] xl:w-[498px] xl:h-[498px]">
         <Image
-          src="/assets/photo-trans.png"
+          src={siteData.cloudfront.photoUrl}
           alt="Sagar Gohil"
           priority
           fill
