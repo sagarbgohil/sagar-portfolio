@@ -3,12 +3,15 @@
 import Head from "next/head";
 import { usePathname } from "next/navigation";
 
+import { siteData } from "@/lib/constants";
+
 const Canonical = () => {
-  const pathName = usePathname();
-  const canonicalUrl = `https://sagargohil.dev${pathName}`;
+  const pathname = usePathname();
+  const canonicalUrl = `${siteData.baseUrl}${pathname === "/" ? "" : pathname}`;
+
   return (
     <Head>
-      <link rel="canonical" href={canonicalUrl.split("?")[0]} />
+      <link rel="canonical" href={canonicalUrl} />
     </Head>
   );
 };

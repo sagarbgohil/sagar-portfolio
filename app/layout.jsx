@@ -4,10 +4,10 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
-import StairTransition from "@/components/StairTransition";
 import HeadElements from "@/components/HeadElements";
 import Canonical from "@/components/Canonical";
 import StickyWidget from "@/components/StickWidget";
+import { siteData } from "@/lib/constants";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -29,6 +29,10 @@ export const metadata = {
       url: "https://sagargohil.dev",
     },
   ],
+  creator: "Sagar Gohil",
+  alternates: {
+    canonical: siteData.baseUrl,
+  },
 };
 
 export default function RootLayout({ children }) {
