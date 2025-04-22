@@ -2,11 +2,20 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Contact = () => {
   const {
@@ -14,6 +23,7 @@ const Contact = () => {
     handleSubmit,
     reset,
     watch,
+    control,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
   const messageValue = watch("message") || "";
@@ -70,7 +80,7 @@ const Contact = () => {
                     {...register("firstName", {
                       required: "First name is required",
                       minLength: {
-                        value: 4,
+                        value: 5,
                         message: "Min 5 characters",
                       },
                       maxLength: {
@@ -133,8 +143,8 @@ const Contact = () => {
                     {...register("phone", {
                       required: "Phone is required",
                       pattern: {
-                        value: /^[0-9]{12}$/,
-                        message: "Phone must be 12 digits",
+                        value: /^[0-9]{10,12}$/,
+                        message: "Phone must be 10-12 digits",
                       },
                     })}
                   />
@@ -144,6 +154,45 @@ const Contact = () => {
                     </p>
                   )}
                 </div>
+              </div>
+
+              <div className="flex h-full flex-col gap-2">
+                <Controller
+                  name="service"
+                  control={control}
+                  rules={{ required: "Service is required" }}
+                  render={({ field }) => (
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      value={field.value}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectLabel>Select a service</SelectLabel>
+                          <SelectItem value="Backend Development">
+                            Backend Development
+                          </SelectItem>
+                          <SelectItem value="Frontend Development">
+                            Frontend Development
+                          </SelectItem>
+                          <SelectItem value="Web App Development">
+                            Web App Development
+                          </SelectItem>
+                          <SelectItem value="Bug Fixing">Bug Fixing</SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  )}
+                />
+                {errors.service && (
+                  <p className="text-red-500 text-sm">
+                    {errors.service.message}
+                  </p>
+                )}
               </div>
 
               <div className="flex h-full flex-col gap-2">

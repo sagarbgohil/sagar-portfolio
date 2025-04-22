@@ -21,8 +21,8 @@ const MobileNav = () => {
   const navLinks = [
     ...links,
     {
-      name: "Contact me",
-      href: "/contact",
+      name: "Hire me",
+      href: "/hire",
     },
   ];
 
@@ -38,7 +38,7 @@ const MobileNav = () => {
           <SheetTitle>Sagar Gohil</SheetTitle>
         </SheetHeader>
 
-        <div className="mt-32 mb-8 text-center text-2xl">
+        <div className="mt-32 mb-8 flex justify-center items-center">
           <Logo />
         </div>
 

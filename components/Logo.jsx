@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -8,9 +9,16 @@ const Logo = () => {
         <h1 className="hidden">
           Sagar Gohil | Software Engineer and Tech Enthusiast
         </h1>
-        <h2 className="h1 text-4xl font-semibold">
+        <Image
+          src="/assets/logo.png"
+          alt="Sagar Gohil Logo"
+          width={70}
+          height={70}
+          className="h1"
+        />
+        {/* <h2 className="h1 text-4xl font-semibold">
           SG<span className="text-accent">.</span>
-        </h2>
+        </h2> */}
       </Link>
     </div>
   );
