@@ -39,13 +39,11 @@ export default function RootLayout({ children }) {
       <GoogleAnalytics gaId="G-MG5JRSF0RR" />
       <Canonical />
 
-      <body className={`${jetBrainsMono.className}`}>
-        <div className="px-8">
-          <Header />
-          <StairTransition />
-          <PageTransition>{children}</PageTransition>
-          <StickyWidget />
-        </div>
+      <body className={`${jetBrainsMono.className} px-8`}>
+        <Header />
+        <StairTransition />
+        <PageTransition>{children}</PageTransition>
+        <StickyWidget />
       </body>
     </html>
   );
