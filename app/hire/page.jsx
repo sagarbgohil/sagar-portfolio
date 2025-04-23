@@ -29,8 +29,10 @@ const Contact = () => {
 
   const [response, setResponse] = useState("");
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL;
+
   const handleFormSubmit = async (data) => {
-    const res = await fetch("/api/contact", {
+    const res = await fetch(`${apiUrl}/api/contact`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
