@@ -34,7 +34,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <HeadElements />
-
       <body className={`${jetBrainsMono.className} px-8`}>
         <Header />
         {children}
