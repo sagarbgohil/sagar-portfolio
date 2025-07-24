@@ -5,27 +5,19 @@ import React from "react";
 
 const Stats = () => {
   return (
-    <section className="pl-8 pr-8 pt-4 pb-12 xl:pt-0 xl:pb-0">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap gap-6 max-w-[80vm] mx-auto xl:max-w-none">
+    <section className="px-4 py-12">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-10 gap-x-6 text-center xl:text-left">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex-1 flex gap-4 items-center justify-center xl:justify-start"
+              className="flex flex-col items-center xl:items-start"
             >
-              <div>
-                <p className="text-4xl xl:text-6xl font-extrabold">
-                  {stat.num}
-                  <span className="text-4xl xl:text-6xl font-extrabold text-accent">
-                    +
-                  </span>
-                </p>
-              </div>
-              <p
-                className={`${
-                  stat.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-                } leading-snug text-white/80`}
-              >
+              <h3 className="text-4xl font-extrabold text-white mb-2">
+                {stat.num}
+                <span className="text-accent">+</span>
+              </h3>
+              <p className="text-white/80 text-sm sm:text-base max-w-[140px] leading-snug">
                 {stat.text}
               </p>
             </div>
