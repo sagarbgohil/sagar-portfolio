@@ -15,11 +15,8 @@ const Logo = () => {
           width={70}
           height={70}
           priority
-          className="h1 object-contain"
+          className="object-contain w-full h-full"
         />
-        {/* <h2 className="h1 text-4xl font-semibold">
-          SG<span className="text-accent">.</span>
-        </h2> */}
       </Link>
     </div>
   );

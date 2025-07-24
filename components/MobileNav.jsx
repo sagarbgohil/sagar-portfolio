@@ -18,14 +18,6 @@ import { links } from "@/lib/constants";
 const MobileNav = () => {
   const pathName = usePathname();
 
-  const navLinks = [
-    ...links,
-    {
-      name: "Hire me",
-      href: "/hire",
-    },
-  ];
-
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
@@ -43,7 +35,7 @@ const MobileNav = () => {
         </div>
 
         <nav className="flex flex-col justify-center items-center gap-8">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <SheetClose asChild key={link.href}>
               <Link
                 href={link.href}

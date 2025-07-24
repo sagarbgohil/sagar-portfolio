@@ -1,33 +1,26 @@
-import Link from "next/link";
 import React from "react";
 import Nav from "./Nav";
-import { Button } from "./ui/button";
 import MobileNav from "./MobileNav";
 import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <>
-      <header className="py-8 xl:py-12 text-white">
-        <div className="container mx-auto flex justify-between items-center">
-          {/* Logo */}
-          <Logo />
+    <header className="p-2 text-white top-0 left-0 right-0 w-full z-50 max-w-6xl mx-auto">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <Logo />
 
-          {/* Desktop Nav */}
-          <div className="hidden xl:flex items-center gap-8">
-            <Nav />
-            <Link href="/hire">
-              <Button>Hire me</Button>
-            </Link>
-          </div>
-
-          {/* Mobile Nav */}
-          <div className="xl:hidden">
-            <MobileNav />
-          </div>
+        {/* Desktop Nav */}
+        <div className="hidden xl:flex items-center gap-8">
+          <Nav />
         </div>
-      </header>
-    </>
+
+        {/* Mobile Nav */}
+        <div className="xl:hidden">
+          <MobileNav />
+        </div>
+      </div>
+    </header>
   );
 };
 

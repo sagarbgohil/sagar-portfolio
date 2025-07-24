@@ -1,58 +1,19 @@
-import Photo from "@/components/Photo";
-import Socials from "@/components/Socials";
-import Stats from "@/components/Stats";
-import { Button } from "@/components/ui/button";
-import { siteData } from "@/lib/constants";
-import { FiDownload } from "react-icons/fi";
+import Footer from "@/components/Footer";
+import HireUs from "@/components/HireUs";
+import Journey from "@/components/Journey";
+import ProfileCard from "@/components/ProfileCard";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 
 const Home = () => {
   return (
-    <section className="min-h-screen">
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-          <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Engineer</span>
-            <h3 className="h1">
-              Hello I'm
-              <br /> <span className="text-accent">Sagar Gohil</span>
-              <br />
-            </h3>
-            <p className="max-w-[350px] p-4 mb-9 text-white/80">
-              I am a Software Engineer with a passion for building scalable and
-              efficient systems. I have experience in various programming
-              languages and frameworks, and I am always eager to learn new
-              technologies.
-            </p>
-
-            <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href={siteData.resumeLink} target="_blank">
-                <Button
-                  variant={"outline"}
-                  size="lg"
-                  className="uppercase flex items-center gap-2"
-                >
-                  <span>Download CV</span>
-                  <FiDownload className="text-xl" />
-                </Button>
-              </a>
-
-              <div className="mb-8 xl:mb-0">
-                <Socials
-                  containerStyles="flex flex-wrap justify-center gap-4 sm:gap-6"
-                  iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px]"
-            // className="order-1 xl:order-none mb-8 xl:mb-0 "
-          >
-            <Photo />
-          </div>
-        </div>
-      </div>
-      <Stats />
+    <section className="max-w-6xl mx-auto p-2">
+      <ProfileCard />
+      <Journey />
+      <Projects />
+      <Skills />
+      <HireUs />
+      <Footer />
     </section>
   );
 };

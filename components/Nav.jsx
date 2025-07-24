@@ -3,20 +3,24 @@
 import { links } from "@/lib/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
 
 const Nav = () => {
-  const pathName = usePathname();
+  const pathname = usePathname();
 
   return (
-    <nav className="flex gap-8">
-      {links.map((link, index) => (
+    <nav className="flex gap-6">
+      {links.map((link) => (
         <Link
-          key={index}
+          key={link.href}
           href={link.href}
-          className={`${
-            pathName === link.href && "text-accent border-b-2 border-accent"
-          } capitalize font-medium hove:text-accent transition-all`}
+          scroll={true}
+          className={`capitalize font-medium hover:text-accent transition-all ${
+            pathname === "/" &&
+            typeof window !== "undefined" &&
+            window.location.hash === link.href
+              ? "text-accent border-b-2 border-accent"
+              : ""
+          }`}
         >
           {link.name}
         </Link>
