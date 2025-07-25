@@ -9,9 +9,9 @@ const Home = () => {
   return (
     <section className="max-w-6xl mx-auto p-2">
       <ProfileCard />
-      <Journey />
       <Projects />
       <Skills />
+      <Journey />
       <HireUs />
       <Footer />
     </section>

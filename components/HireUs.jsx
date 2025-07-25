@@ -59,7 +59,7 @@ const HireUs = () => {
     <section id="hire-us" className="max-w-5xl mx-auto px-4 py-12">
       {/* Section Header */}
       <div className="mb-10 text-center md:text-left">
-        <h2 className="text-3xl font-bold text-white"># Hire Us</h2>
+        <h2 className="text-3xl font-bold text-white">#Hire Us</h2>
         <p className="mt-2 text-muted-foreground max-w-2xl">
           Let’s build something great together — tell us how we can help.
         </p>
