@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import HireUs from "@/components/HireUs";
 import Journey from "@/components/Journey";
 import ProfileCard from "@/components/ProfileCard";
@@ -13,7 +12,6 @@ const Home = () => {
       <Skills />
       <Journey />
       <HireUs />
-      <Footer />
     </section>
   );
 };

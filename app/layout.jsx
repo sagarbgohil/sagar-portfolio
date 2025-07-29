@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import HeadElements from "@/components/HeadElements";
 import StickyWidget from "@/components/StickWidget";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Footer from "@/components/Footer";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
         {children}
         <StickyWidget />
         <GoogleAnalytics />
+        <Footer />
       </body>
     </html>
   );
