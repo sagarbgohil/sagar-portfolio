@@ -23,7 +23,7 @@ const HireUs = () => {
     watch,
     control,
     formState: { errors, isSubmitting, isValid, isSubmitSuccessful },
-  } = useForm({ mode: "onTouched" });
+  } = useForm({ mode: "onTouched", criteriaMode: "all" });
 
   const messageValue = watch("message") || "";
   const [response, setResponse] = useState("");
@@ -33,7 +33,7 @@ const HireUs = () => {
 
   const handleFormSubmit = async (data) => {
     try {
-      const res = await fetch(`${apiUrl}/api/contact`, {
+      const res = await fetch(`${apiUrl}/api/v1/misc/contact-us`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -83,33 +83,17 @@ const HireUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col gap-2">
             <Input
-              placeholder="First Name"
+              placeholder="Name"
               maxLength={50}
-              aria-invalid={!!errors.firstName}
-              {...register("firstName", {
-                required: "First name is required",
+              aria-invalid={!!errors.name}
+              {...register("name", {
+                required: "Name is required",
                 minLength: { value: 2, message: "At least 2 characters" },
                 maxLength: { value: 50, message: "Max 50 characters" },
               })}
             />
-            {errors.firstName && (
-              <p className="text-red-500 text-sm">{errors.firstName.message}</p>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <Input
-              placeholder="Last Name"
-              maxLength={50}
-              aria-invalid={!!errors.lastName}
-              {...register("lastName", {
-                required: "Last name is required",
-                minLength: { value: 2, message: "At least 2 characters" },
-                maxLength: { value: 50, message: "Max 50 characters" },
-              })}
-            />
-            {errors.lastName && (
-              <p className="text-red-500 text-sm">{errors.lastName.message}</p>
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name.message}</p>
             )}
           </div>
 
@@ -154,42 +138,47 @@ const HireUs = () => {
               <p className="text-red-500 text-sm">{errors.phone.message}</p>
             )}
           </div>
-        </div>
 
-        {/* Service Select */}
-        <div className="flex flex-col gap-2">
-          <Controller
-            name="service"
-            control={control}
-            rules={{ required: "Service is required" }}
-            render={({ field }) => (
-              <Select
-                onValueChange={field.onChange}
-                value={field.value}
-                defaultValue={field.value}
-              >
-                <SelectTrigger className="w-full" aria-label="Select a service">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Services</SelectLabel>
-                    <SelectItem value="Backend Development">Backend</SelectItem>
-                    <SelectItem value="Frontend Development">
-                      Frontend
-                    </SelectItem>
-                    <SelectItem value="Web App Development">
-                      Fullstack
-                    </SelectItem>
-                    <SelectItem value="Bug Fixing">Bug Fixing</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+          {/* Service Select */}
+          <div className="flex flex-col gap-2">
+            <Controller
+              name="service"
+              control={control}
+              rules={{ required: "Service is required" }}
+              render={({ field }) => (
+                <Select
+                  onValueChange={field.onChange}
+                  value={field.value}
+                  defaultValue={field.value}
+                >
+                  <SelectTrigger
+                    className="w-full"
+                    aria-label="Select a service"
+                  >
+                    <SelectValue placeholder="Select a service" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel>Services</SelectLabel>
+                      <SelectItem value="Backend Development">
+                        Backend
+                      </SelectItem>
+                      <SelectItem value="Frontend Development">
+                        Frontend
+                      </SelectItem>
+                      <SelectItem value="Web App Development">
+                        Fullstack
+                      </SelectItem>
+                      <SelectItem value="Bug Fixing">Bug Fixing</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              )}
+            />
+            {errors.service && (
+              <p className="text-red-500 text-sm">{errors.service.message}</p>
             )}
-          />
-          {errors.service && (
-            <p className="text-red-500 text-sm">{errors.service.message}</p>
-          )}
+          </div>
         </div>
 
         {/* Message Box */}
