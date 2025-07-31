@@ -63,6 +63,15 @@ const HireUs = () => {
         <p className="mt-2 text-muted-foreground max-w-2xl">
           Let’s build something great together — tell us how we can help.
         </p>
+        <p className="text-sm text-muted-foreground">
+          Or email us directly at{" "}
+          <a
+            href="mailto:connect@sagargohil.dev"
+            className="text-accent hover:underline"
+          >
+            connect@sagargohil.dev
+          </a>
+        </p>
       </div>
 
       {/* Feedback */}
