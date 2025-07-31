@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { fetchProxyV1 } from "@/lib/proxy";
 
 const HireUs = () => {
   const {
@@ -29,11 +30,9 @@ const HireUs = () => {
   const [response, setResponse] = useState("");
   const [submitError, setSubmitError] = useState("");
 
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL;
-
   const handleFormSubmit = async (data) => {
     try {
-      const res = await fetch(`${apiUrl}/api/v1/misc/contact-us`, {
+      const res = await fetchProxyV1(`/misc/contact-us`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
