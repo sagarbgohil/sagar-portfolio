@@ -3,7 +3,7 @@ import Socials from "./Socials";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 py-8 mt-12">
+    <footer className="border-t border-border py-8 mt-12 bg-background/80">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         {/* Left: copyright */}
         <div className="text-sm text-muted-foreground">
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
 
         {/* Right: nav links (optional) */}
-        <div className="flex gap-6 text-sm text-white/60">
+        <div className="flex gap-6 text-sm text-muted-foreground">
           <Link href="#top">Home</Link>
           <Link href="#projects">Projects</Link>
           <Link href="#hire-us">Hire Us</Link>

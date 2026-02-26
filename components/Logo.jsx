@@ -9,13 +9,24 @@ const Logo = () => {
         <h1 className="hidden">
           Sagar Gohil | Software Engineer and Tech Enthusiast
         </h1>
+        {/* Light theme logo */}
+        <Image
+          src="/assets/logo-dark.png"
+          alt="Sagar Gohil Logo"
+          width={70}
+          height={70}
+          priority
+          className="object-contain w-full h-full block dark:hidden"
+        />
+
+        {/* Dark theme logo */}
         <Image
           src="/assets/logo.png"
           alt="Sagar Gohil Logo"
           width={70}
           height={70}
           priority
-          className="object-contain w-full h-full"
+          className="object-contain w-full h-full hidden dark:block"
         />
       </Link>
     </div>

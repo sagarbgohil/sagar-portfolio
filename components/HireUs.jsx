@@ -55,22 +55,33 @@ const HireUs = () => {
   };
 
   return (
-    <section id="hire-us" className="max-w-5xl mx-auto px-4 py-12">
+    <section id="hire-us" className="mx-auto max-w-5xl px-4 py-14">
       {/* Section Header */}
-      <div className="mb-10 text-center md:text-left">
-        <h2 className="text-3xl font-bold text-white">#Hire Us</h2>
-        <p className="mt-2 text-muted-foreground max-w-2xl">
-          Let’s build something great together — tell us how we can help.
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Or email us directly at{" "}
-          <a
-            href="mailto:connect@sagargohil.dev"
-            className="text-accent hover:underline"
-          >
-            connect@sagargohil.dev
-          </a>
-        </p>
+      <div className="mb-8 flex flex-col gap-3 text-center md:text-left">
+        <div className="inline-flex items-center justify-center md:justify-start">
+          <span className="rounded-full border border-accent/30 bg-accent/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            #Contact
+          </span>
+        </div>
+        <div>
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Let&apos;s work together
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm sm:text-base text-muted-foreground">
+            Tell me about your product, stack, or backend challenges. I&apos;ll
+            review your message and get back to you as soon as possible.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Prefer email? Reach me at{" "}
+            <a
+              href="mailto:connect@sagargohil.dev"
+              className="font-medium text-accent hover:underline"
+            >
+              connect@sagargohil.dev
+            </a>
+            .
+          </p>
+        </div>
       </div>
 
       {/* Feedback */}
@@ -84,7 +95,7 @@ const HireUs = () => {
       {/* Form */}
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="space-y-6 bg-white/5 p-8 rounded-xl shadow-lg border border-white/10"
+        className="space-y-6 rounded-2xl border border-border/80 bg-card/70 p-8 shadow-lg"
         noValidate
       >
         {/* Grid Fields */}
@@ -202,7 +213,7 @@ const HireUs = () => {
               maxLength: { value: 1000, message: "Max 1000 characters" },
             })}
           />
-          <div className="text-sm text-white/60 text-right">
+          <div className="text-sm text-muted-foreground text-right">
             {messageValue.length} / 1000 characters
           </div>
           {errors.message && (

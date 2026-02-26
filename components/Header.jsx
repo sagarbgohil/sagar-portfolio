@@ -1,22 +1,32 @@
 import React from "react";
+import Link from "next/link";
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
-    <header className="p-2 text-white top-0 left-0 right-0 w-full z-50 max-w-6xl mx-auto">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Logo */}
         <Logo />
 
-        {/* Desktop Nav */}
-        <div className="hidden xl:flex items-center gap-8">
+        {/* Desktop Nav + Actions */}
+        <div className="hidden items-center gap-6 xl:flex">
           <Nav />
+          <ThemeToggle />
+          <Link
+            href="#hire-us"
+            className="inline-flex items-center rounded-full border border-accent bg-accent/10 px-4 py-2 text-sm font-medium text-accent shadow-sm transition-colors hover:bg-accent hover:text-primary"
+          >
+            Hire Us
+          </Link>
         </div>
 
-        {/* Mobile Nav */}
-        <div className="xl:hidden">
+        {/* Mobile Nav + Theme */}
+        <div className="flex items-center gap-3 xl:hidden">
+          <ThemeToggle />
           <MobileNav />
         </div>
       </div>

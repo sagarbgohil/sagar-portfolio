@@ -3,16 +3,18 @@ import Journey from "@/components/Journey";
 import ProfileCard from "@/components/ProfileCard";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
+import About from "@/components/About";
 
 const Home = () => {
   return (
-    <section className="max-w-6xl mx-auto p-2">
+    <main>
       <ProfileCard />
       <Projects />
       <Skills />
+      <About />
       <Journey />
       <HireUs />
-    </section>
+    </main>
   );
 };
 
