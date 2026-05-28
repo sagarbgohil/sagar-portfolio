@@ -12,6 +12,7 @@ const metadata = {
   code_challenge_methods_supported: ["S256"],
   revocation_endpoint: `${BASE}/oauth/revoke`,
   agent_auth: {
+    skill: `${BASE}/.well-known/agent-skills/auth-md/SKILL.md`,
     register_uri: `${BASE}/oauth/register`,
     auth_md_uri: `${BASE}/auth.md`,
     supported_identity_types: ["jwk", "did"],
