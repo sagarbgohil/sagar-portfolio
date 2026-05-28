@@ -14,7 +14,6 @@ const metadata = {
   agent_auth: {
     skill: `${BASE}/.well-known/agent-skills/auth-md/SKILL.md`,
     register_uri: `${BASE}/oauth/register`,
-    auth_md_uri: `${BASE}/auth.md`,
     supported_identity_types: ["jwk", "did"],
     credential_types: ["bearer_token"],
     claims_uri: `${BASE}/oauth/userinfo`,
