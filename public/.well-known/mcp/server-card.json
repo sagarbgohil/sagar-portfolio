@@ -41,7 +41,7 @@
   ],
   "resources": [
     {
-      "uri": "https://www.sagargohil.dev/_markdown",
+      "uri": "https://www.sagargohil.dev/markdown-view",
       "name": "Portfolio (Markdown)",
       "description": "Full portfolio content as Markdown — projects, skills, experience, and education.",
       "mimeType": "text/markdown"

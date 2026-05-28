@@ -4,7 +4,7 @@ export function middleware(request) {
   const accept = request.headers.get("accept") || "";
   if (accept.includes("text/markdown")) {
     const url = request.nextUrl.clone();
-    url.pathname = "/_markdown";
+    url.pathname = "/markdown-view";
     return NextResponse.rewrite(url);
   }
   return NextResponse.next();
