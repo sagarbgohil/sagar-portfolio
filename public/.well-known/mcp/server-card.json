@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "serverInfo": {
+    "name": "sagargohil.dev",
+    "version": "1.0.0",
+    "description": "MCP server for Sagar Gohil's portfolio — exposes tools and resources for querying projects, skills, experience, and contact.",
+    "homepage": "https://www.sagargohil.dev",
+    "contact": "connect@sagargohil.dev"
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://www.sagargohil.dev/mcp"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "sampling": false
+  },
+  "tools": [
+    {
+      "name": "get_projects",
+      "description": "Returns the list of projects Sagar has worked on, including title, description, tech stack, and link."
+    },
+    {
+      "name": "get_skills",
+      "description": "Returns Sagar's technical skills grouped by category."
+    },
+    {
+      "name": "get_experience",
+      "description": "Returns Sagar's work experience history."
+    },
+    {
+      "name": "get_education",
+      "description": "Returns Sagar's educational background."
+    },
+    {
+      "name": "contact",
+      "description": "Sends a contact/hire inquiry to Sagar. Requires name, email, phone, service, and message."
+    }
+  ],
+  "resources": [
+    {
+      "uri": "https://www.sagargohil.dev/_markdown",
+      "name": "Portfolio (Markdown)",
+      "description": "Full portfolio content as Markdown — projects, skills, experience, and education.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "https://www.sagargohil.dev/.well-known/api-catalog",
+      "name": "API Catalog",
+      "description": "RFC 9727 API catalog listing available API endpoints.",
+      "mimeType": "application/linkset+json"
+    }
+  ],
+  "auth": {
+    "type": "none"
+  }
+}

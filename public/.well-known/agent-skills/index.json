@@ -1,0 +1,75 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "link-headers",
+      "type": "discovery",
+      "description": "Link response headers for agent discovery per RFC 8288",
+      "url": "https://www.sagargohil.dev/.well-known/api-catalog",
+      "sha256": "b1bf741beb1f001b003856416dc62bec2fb517c51936ff901488c8b903e71918"
+    },
+    {
+      "name": "markdown-negotiation",
+      "type": "content",
+      "description": "Returns text/markdown when Accept: text/markdown is requested",
+      "url": "https://www.sagargohil.dev/_markdown",
+      "sha256": "6e2613e4b6daab3bcccf9f52097d633f6aec4cf641a59a505898d605cc407643"
+    },
+    {
+      "name": "web-bot-auth",
+      "type": "auth",
+      "description": "JWKS at /.well-known/http-message-signatures-directory for Web Bot Auth",
+      "url": "https://www.sagargohil.dev/.well-known/http-message-signatures-directory",
+      "sha256": "5221f75a33a70b4f435b0b408afec1d1f4920b98e4d6337fad9128a6242fc4a3"
+    },
+    {
+      "name": "content-signals",
+      "type": "policy",
+      "description": "Content-Signal: ai-train=no, search=yes, ai-input=yes in robots.txt",
+      "url": "https://www.sagargohil.dev/robots.txt",
+      "sha256": "d3bd0f686c6fec229e4003e6fdb48f98bfc7d9c68cbeb88d28284fb4c91874db"
+    },
+    {
+      "name": "api-catalog",
+      "type": "discovery",
+      "description": "RFC 9727 API catalog at /.well-known/api-catalog returning application/linkset+json",
+      "url": "https://www.sagargohil.dev/.well-known/api-catalog",
+      "sha256": "b0ebdd2b95309f139a9f189c138764abaf8235f3bd19966e0ff9faf67ae04e8e"
+    },
+    {
+      "name": "oauth-discovery",
+      "type": "auth",
+      "description": "OAuth 2.0 and OIDC discovery metadata at /.well-known/oauth-authorization-server and /.well-known/openid-configuration",
+      "url": "https://www.sagargohil.dev/.well-known/oauth-authorization-server",
+      "sha256": "af9c7e4c055c65e1e485d7de44b0fc16dd6292e65aa18d8fb623589cfbe761f2"
+    },
+    {
+      "name": "oauth-protected-resource",
+      "type": "auth",
+      "description": "RFC 9728 OAuth Protected Resource Metadata at /.well-known/oauth-protected-resource",
+      "url": "https://www.sagargohil.dev/.well-known/oauth-protected-resource",
+      "sha256": "9fc02a7ba68808048fcc6bd2ac05d6182924f0650da25f33b074e14d338d6d64"
+    },
+    {
+      "name": "auth-md",
+      "type": "auth",
+      "description": "Agent registration instructions at /auth.md with agent_auth block in /.well-known/oauth-authorization-server",
+      "url": "https://www.sagargohil.dev/auth.md",
+      "sha256": "0cf386ea5a83173740995556373ced26fcfc7f97f581fcb815e5b7751afa4335"
+    },
+    {
+      "name": "mcp-server-card",
+      "type": "discovery",
+      "description": "MCP Server Card at /.well-known/mcp/server-card.json per SEP-1649",
+      "url": "https://www.sagargohil.dev/.well-known/mcp/server-card.json",
+      "sha256": "f732ad758397120f3dfa449f849d40fd0499e098646c50e21789b457c1e6c2ce"
+    },
+    {
+      "name": "agent-skills",
+      "type": "discovery",
+      "description": "Agent Skills Discovery index at /.well-known/agent-skills/index.json per Agent Skills Discovery RFC v0.2.0",
+      "url": "https://www.sagargohil.dev/.well-known/agent-skills/index.json",
+      "sha256": "3f2640463a1194dc8eb28ca1cc2d7d679c3e0b6d9d05e3e8330c62d24fe7d9e1"
+    }
+  ]
+}

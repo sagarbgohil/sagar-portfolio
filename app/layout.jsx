@@ -9,6 +9,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Footer from "@/components/Footer";
 import { Clarity } from "@/components/Clarity";
 import ScrollToHash from "@/components/ScrollToHash";
+import WebMCP from "@/components/WebMCP";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
       <body className={`${jetBrainsMono.className} px-2`}>
         <Clarity />
         <ScrollToHash />
+        <WebMCP />
         <Header />
         {children}
         <StickyWidget />
