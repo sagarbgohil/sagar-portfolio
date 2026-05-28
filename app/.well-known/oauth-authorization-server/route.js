@@ -12,12 +12,23 @@ const metadata = {
   code_challenge_methods_supported: ["S256"],
   revocation_endpoint: `${BASE}/oauth/revoke`,
   agent_auth: {
-    skill: `${BASE}/.well-known/agent-skills/auth-md/SKILL.md`,
+    skill: "https://isitagentready.com/.well-known/agent-skills/auth-md/SKILL.md",
     register_uri: `${BASE}/oauth/register`,
-    supported_identity_types: ["jwk", "did"],
-    credential_types: ["bearer_token"],
-    claims_uri: `${BASE}/oauth/userinfo`,
+    identity_types_supported: ["identity_assertion", "anonymous"],
+    identity_assertion: {
+      assertion_types_supported: [
+        "urn:ietf:params:oauth:token-type:id-jag",
+        "verified_email",
+      ],
+      credential_types_supported: ["bearer_token"],
+      claim_uri: `${BASE}/oauth/userinfo`,
+    },
+    anonymous: {
+      credential_types_supported: ["bearer_token"],
+      claim_uri: `${BASE}/oauth/userinfo`,
+    },
     revocation_uri: `${BASE}/oauth/revoke`,
+    events_supported: ["token_revocation"],
   },
 };
 

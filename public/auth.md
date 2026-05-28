@@ -5,18 +5,26 @@ Agent registration and authentication guide for sagargohil.dev APIs.
 ```json agent_auth
 {
   "issuer": "https://www.sagargohil.dev",
-  "skill": "https://www.sagargohil.dev/.well-known/agent-skills/auth-md/SKILL.md",
+  "skill": "https://isitagentready.com/.well-known/agent-skills/auth-md/SKILL.md",
   "register_uri": "https://www.sagargohil.dev/oauth/register",
   "authorization_endpoint": "https://www.sagargohil.dev/oauth/authorize",
   "token_endpoint": "https://www.sagargohil.dev/oauth/token",
   "jwks_uri": "https://www.sagargohil.dev/.well-known/jwks",
-  "claims_uri": "https://www.sagargohil.dev/oauth/userinfo",
+  "identity_types_supported": ["identity_assertion", "anonymous"],
+  "identity_assertion": {
+    "assertion_types_supported": [
+      "urn:ietf:params:oauth:token-type:id-jag",
+      "verified_email"
+    ],
+    "credential_types_supported": ["bearer_token"],
+    "claim_uri": "https://www.sagargohil.dev/oauth/userinfo"
+  },
+  "anonymous": {
+    "credential_types_supported": ["bearer_token"],
+    "claim_uri": "https://www.sagargohil.dev/oauth/userinfo"
+  },
   "revocation_uri": "https://www.sagargohil.dev/oauth/revoke",
-  "supported_identity_types": ["jwk", "did"],
-  "credential_types": ["bearer_token"],
-  "scopes_supported": ["openid", "profile", "email"],
-  "grant_types_supported": ["authorization_code", "client_credentials"],
-  "code_challenge_methods_supported": ["S256"]
+  "events_supported": ["token_revocation"]
 }
 ```
 
