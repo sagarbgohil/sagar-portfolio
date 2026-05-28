@@ -2,6 +2,22 @@
 
 This document describes how AI agents and automated clients can register and authenticate with the sagargohil.dev API.
 
+```json agent_auth
+{
+  "issuer": "https://www.sagargohil.dev",
+  "register_uri": "https://www.sagargohil.dev/oauth/register",
+  "supported_identity_types": ["jwk", "did"],
+  "credential_types": ["bearer_token"],
+  "claims_uri": "https://www.sagargohil.dev/oauth/userinfo",
+  "revocation_uri": "https://www.sagargohil.dev/oauth/revoke",
+  "authorization_endpoint": "https://www.sagargohil.dev/oauth/authorize",
+  "token_endpoint": "https://www.sagargohil.dev/oauth/token",
+  "jwks_uri": "https://www.sagargohil.dev/.well-known/jwks",
+  "scopes_supported": ["openid", "profile", "email"],
+  "grant_types_supported": ["authorization_code", "client_credentials"]
+}
+```
+
 ## Agent Registration
 
 To register as an agent, send a POST request to the registration endpoint with your agent identity:
