@@ -31,7 +31,7 @@ const ProfileCard = () => {
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row xl:items-start xl:justify-start sm:gap-5">
             <Link
               href="#projects"
-              className="inline-flex h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-primary shadow-lg shadow-accent/30 transition-transform hover:-translate-y-0.5 hover:shadow-xl"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-white shadow-lg shadow-accent/30 transition-transform hover:-translate-y-0.5 hover:shadow-xl"
             >
               View Projects
             </Link>

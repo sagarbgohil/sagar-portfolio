@@ -18,7 +18,7 @@ const Header = () => {
           <ThemeToggle />
           <Link
             href="#hire-us"
-            className="inline-flex items-center rounded-full border border-accent bg-accent/10 px-4 py-2 text-sm font-medium text-accent shadow-sm transition-colors hover:bg-accent hover:text-primary"
+            className="inline-flex items-center rounded-full border border-accent bg-transparent px-4 py-2 text-sm font-medium text-accent shadow-sm transition-colors hover:bg-accent hover:text-white"
           >
             Hire Us
           </Link>

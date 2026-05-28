@@ -3,6 +3,7 @@ const nextConfig = {
   images: {
     domains: ["drh6po6q1h65p.cloudfront.net"],
     minimumCacheTTL: 86400,
+    imageSizes: [16, 32, 48, 64, 96, 128, 160, 200, 256, 300, 384],
   },
   async headers() {
     return [
