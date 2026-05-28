@@ -1,18 +1,15 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
 import { siteData } from "@/lib/constants";
 
 const Photo = () => {
   return (
     <div
       className="
-          relative flex items-center justify-center 
-          w-[160px] h-[160px]        /* Default: very small */
-          md:w-[200px] md:h-[200px]  /* Medium size on tablets */
-          lg:w-[298px] lg:h-[298px]  /* Large size on desktops */
+          relative flex items-center justify-center
+          w-[160px] h-[160px]
+          md:w-[200px] md:h-[200px]
+          lg:w-[298px] lg:h-[298px]
         "
     >
       <Image
@@ -21,18 +18,17 @@ const Photo = () => {
         priority
         fill
         quality={75}
-        sizes="(max-width: 760px) 100vw, 298px"
+        sizes="(max-width: 767px) 160px, (max-width: 1023px) 200px, 298px"
         className="object-contain"
       />
 
-      {/* Decorative SVG animation */}
-      <motion.svg
+      <svg
         className="absolute top-0 left-0 pointer-events-none"
         fill="transparent"
         viewBox="0 0 506 506"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <motion.circle
+        <circle
           cx="253"
           cy="253"
           r="250"
@@ -40,18 +36,9 @@ const Photo = () => {
           strokeWidth="4"
           strokeLinecap="round"
           strokeLinejoin="round"
-          initial={{ strokeDasharray: "24 10 0 0" }}
-          animate={{
-            strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-            rotate: [120, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
+          className="photo-ring-circle"
         />
-      </motion.svg>
+      </svg>
     </div>
   );
 };

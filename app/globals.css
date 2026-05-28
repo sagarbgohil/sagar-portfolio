@@ -1,4 +1,23 @@
 @import "tailwindcss";
+
+@keyframes photo-ring-dash {
+  0%   { stroke-dasharray: 15 120 25 25; }
+  50%  { stroke-dasharray: 16 25 92 72; }
+  100% { stroke-dasharray: 4 250 22 22; }
+}
+
+@keyframes photo-ring-rotate {
+  from { transform: rotate(120deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.photo-ring-circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation:
+    photo-ring-dash   20s ease-in-out infinite alternate,
+    photo-ring-rotate 20s ease-in-out infinite alternate;
+}
 /* @import "tw-animate-css"; */
 
 @tailwind base;
@@ -62,12 +81,12 @@
   --secondary-foreground: #020617;
   --muted: #e5e7eb;
   --muted-foreground: #6b7280;
-  --accent: #06b6d4; /* cyan */
+  --accent: #0e7490; /* cyan-700 — passes WCAG AA on light backgrounds */
   --accent-foreground: #022c3a;
   --destructive: #dc2626;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #06b6d4;
+  --ring: #0e7490;
   --chart-1: #0ea5e9;
   --chart-2: #22c55e;
   --chart-3: #f97316;

@@ -47,7 +47,7 @@ const Projects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="View Project"
+                  aria-label={`View ${project.title} project`}
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-accent text-accent transition-all duration-300 hover:bg-accent hover:text-primary group-hover:-rotate-45"
                 >
                   <BsArrowRight className="text-xl" />

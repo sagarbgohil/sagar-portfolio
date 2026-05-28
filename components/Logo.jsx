@@ -15,6 +15,7 @@ const Logo = () => {
           alt="Sagar Gohil Logo"
           width={70}
           height={70}
+          sizes="70px"
           priority
           className="object-contain w-full h-full block dark:hidden"
         />
@@ -25,6 +26,7 @@ const Logo = () => {
           alt="Sagar Gohil Logo"
           width={70}
           height={70}
+          sizes="70px"
           priority
           className="object-contain w-full h-full hidden dark:block"
         />

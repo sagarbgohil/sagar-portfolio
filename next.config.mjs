@@ -2,6 +2,7 @@
 const nextConfig = {
   images: {
     domains: ["drh6po6q1h65p.cloudfront.net"],
+    minimumCacheTTL: 86400,
   },
   async headers() {
     return [
@@ -14,6 +15,15 @@ const nextConfig = {
               '</.well-known/api-catalog>; rel="api-catalog"',
               "</docs/api>; rel=\"service-doc\"",
             ].join(", "),
+          },
+        ],
+      },
+      {
+        source: "/assets/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

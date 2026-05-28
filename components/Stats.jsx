@@ -13,10 +13,10 @@ const Stats = () => {
               key={index}
               className="flex flex-col items-center xl:items-start"
             >
-              <h3 className="text-4xl font-extrabold text-foreground mb-2">
+              <p className="text-4xl font-extrabold text-foreground mb-2">
                 {stat.num}
                 <span className="text-accent">+</span>
-              </h3>
+              </p>
               <p className="text-muted-foreground text-sm sm:text-base max-w-[160px] leading-snug">
                 {stat.text}
               </p>

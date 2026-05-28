@@ -69,7 +69,7 @@ const Skills = () => {
                   key={`${group.title}-${index}`}
                   className="flex flex-col items-center justify-center rounded-xl border border-border/60 bg-background/40 px-3 py-3 text-center text-sm transition-all duration-300 hover:border-accent/60 hover:bg-accent/5"
                 >
-                  <div className="mb-1 text-accent text-2xl">{skill.icon}</div>
+                  <div className="mb-1 text-accent text-2xl" aria-hidden="true">{skill.icon}</div>
                   <p className="font-medium">{skill.name}</p>
                 </div>
               ))}
