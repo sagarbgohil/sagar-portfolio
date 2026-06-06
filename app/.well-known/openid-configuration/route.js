@@ -11,7 +11,10 @@ const metadata = {
   grant_types_supported: ["authorization_code", "client_credentials"],
   subject_types_supported: ["public"],
   id_token_signing_alg_values_supported: ["EdDSA"],
-  token_endpoint_auth_methods_supported: ["client_secret_post", "private_key_jwt"],
+  token_endpoint_auth_methods_supported: [
+    "client_secret_post",
+    "private_key_jwt",
+  ],
   code_challenge_methods_supported: ["S256"],
   claims_supported: ["sub", "iss", "name", "email"],
 };

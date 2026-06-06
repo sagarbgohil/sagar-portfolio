@@ -22,12 +22,12 @@ function scrollToHash(hash) {
     window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
 
   const top =
-    window.scrollY +
-    el.getBoundingClientRect().top -
-    getHeaderOffset() -
-    12; // small breathing space
+    window.scrollY + el.getBoundingClientRect().top - getHeaderOffset() - 12; // small breathing space
 
-  window.scrollTo({ top: Math.max(0, top), behavior: prefersReducedMotion ? "auto" : "smooth" });
+  window.scrollTo({
+    top: Math.max(0, top),
+    behavior: prefersReducedMotion ? "auto" : "smooth",
+  });
 }
 
 const ScrollToHash = () => {
@@ -52,4 +52,3 @@ const ScrollToHash = () => {
 };
 
 export default ScrollToHash;
-

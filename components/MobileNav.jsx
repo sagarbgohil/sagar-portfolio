@@ -20,9 +20,9 @@ const MobileNav = () => {
 
   return (
     <Sheet>
-      <SheetTrigger className="flex justify-center items-center">
+      <SheetTrigger className="flex items-center justify-center">
         <div aria-label="Menu">
-          <CiMenuFries className="text-[32px] text-accent" />
+          <CiMenuFries className="text-accent text-[32px]" />
         </div>
       </SheetTrigger>
       <SheetContent className="flex flex-col gap-4">
@@ -30,20 +30,19 @@ const MobileNav = () => {
           <SheetTitle>Sagar Gohil</SheetTitle>
         </SheetHeader>
 
-        <div className="mt-32 mb-8 flex justify-center items-center">
+        <div className="mt-32 mb-8 flex items-center justify-center">
           <Logo />
         </div>
 
-        <nav className="flex flex-col justify-center items-center gap-8">
+        <nav className="flex flex-col items-center justify-center gap-8">
           {links.map((link) => (
             <SheetClose asChild key={link.href}>
               <Link
                 href={link.href}
                 className={`${
                   link.href === pathName &&
-                  "text-accent border-b-2 border-accent"
-                }
-                  text-xl capitalize hover:text-accent transition-all`}
+                  "text-accent border-accent border-b-2"
+                } hover:text-accent text-xl capitalize transition-all`}
               >
                 {link.name}
               </Link>

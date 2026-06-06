@@ -17,8 +17,8 @@ const ThemeToggle = () => {
     const shouldUseDark = stored
       ? stored === "dark"
       : typeof prefersDark === "boolean"
-      ? prefersDark
-      : true;
+        ? prefersDark
+        : true;
 
     const root = document.documentElement;
     if (shouldUseDark) {
@@ -51,7 +51,7 @@ const ThemeToggle = () => {
       type="button"
       onClick={handleToggle}
       aria-label="Toggle theme"
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/70 text-sm text-muted-foreground shadow-sm backdrop-blur hover:border-accent hover:text-accent transition-colors"
+      className="border-border bg-background/70 text-muted-foreground hover:border-accent hover:text-accent inline-flex h-9 w-9 items-center justify-center rounded-full border text-sm shadow-sm backdrop-blur transition-colors"
     >
       {isDark ? <BsSun className="h-4 w-4" /> : <BsMoon className="h-4 w-4" />}
     </button>
@@ -59,4 +59,3 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
-

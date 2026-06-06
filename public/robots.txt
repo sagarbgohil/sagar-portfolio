@@ -1,5 +1,11 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://sagargohil.dev
+
+# Sitemaps
 Sitemap: https://sagargohil.dev/sitemap.xml
 
 Content-Signal: ai-train=no, search=yes, ai-input=yes

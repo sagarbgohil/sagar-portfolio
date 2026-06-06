@@ -1,31 +1,71 @@
 "use client";
 
-import { stats } from "@/lib/constants";
-import React from "react";
+import { useEffect, useRef, useState } from "react";
+import { STATS } from "@/lib/constants";
 
-const Stats = () => {
+function useCountUp(target, duration = 1400) {
+  const ref = useRef(null);
+  const [val, setVal] = useState(0);
+  const done = useRef(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const run = () => {
+      if (done.current) return;
+      done.current = true;
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setVal(Math.round(eased * target));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) run();
+        });
+      },
+      { threshold: 0.5 }
+    );
+    io.observe(node);
+    const t = setTimeout(() => {
+      if (!done.current) {
+        done.current = true;
+        setVal(target);
+      }
+    }, 1600);
+    return () => {
+      io.disconnect();
+      clearTimeout(t);
+    };
+  }, [target, duration]);
+
+  return [val, ref];
+}
+
+function StatCell({ num, suffix, label }) {
+  const [val, ref] = useCountUp(num);
   return (
-    <section className="px-4 py-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-10 gap-x-6 text-center xl:text-left">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center xl:items-start"
-            >
-              <p className="text-4xl font-extrabold text-foreground mb-2">
-                {stat.num}
-                <span className="text-accent">+</span>
-              </p>
-              <p className="text-muted-foreground text-sm sm:text-base max-w-[160px] leading-snug">
-                {stat.text}
-              </p>
-            </div>
-          ))}
-        </div>
+    <div className="stat-cell">
+      <div className="num" ref={ref}>
+        {val}
+        <span className="suffix">{suffix}</span>
       </div>
-    </section>
+      <div className="label">{label}</div>
+    </div>
   );
-};
+}
 
-export default Stats;
+export default function Stats() {
+  return (
+    <div className="stats-bar reveal">
+      {STATS.map((s) => (
+        <StatCell key={s.label} {...s} />
+      ))}
+    </div>
+  );
+}

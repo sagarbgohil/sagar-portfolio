@@ -1,70 +1,128 @@
-import Link from "next/link";
-import Photo from "@/components/Photo";
-import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
+import { siteData, SOCIALS } from "@/lib/constants";
+import Image from "next/image";
 
-const ProfileCard = () => {
+function HeroTerminal() {
   return (
-    <section
-      id="top"
-      className="mx-auto max-w-6xl px-4 pt-10 pb-4 sm:pt-14 sm:pb-6"
+    <div className="terminal reveal" style={{ "--delay": "120ms" }}>
+      <div className="terminal-bar">
+        <span className="tdot r" />
+        <span className="tdot y" />
+        <span className="tdot g" />
+        <span className="tname">sagar@gohil — zsh</span>
+      </div>
+      <div className="terminal-body">
+        <div className="t-line">
+          <span className="t-prompt">➜</span> <span className="t-path">~</span>{" "}
+          whoami --verbose
+        </div>
+        <div className="t-line">
+          <span className="t-key">role</span> <span className="t-val">= </span>
+          <span className="t-str">&quot;backend-leaning full-stack&quot;</span>
+        </div>
+        <div className="t-line">
+          <span className="t-key">stack</span> <span className="t-val">= </span>
+          <span className="t-str">[nodejs, nestjs, nextjs, reactjs]</span>
+        </div>
+        <div className="t-line">
+          <span className="t-key">cloud</span> <span className="t-val">= </span>
+          <span className="t-str">[aws, gcp, docker, kafka]</span>
+        </div>
+        <div className="t-line">
+          <span className="t-key">based</span> <span className="t-val">= </span>
+          <span className="t-str">&quot;Gujarat, India&quot;</span>
+        </div>
+        <div className="t-line">
+          <span className="t-prompt">➜</span> <span className="cursor" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="arrow"
     >
-      <div className="grid items-center gap-10 xl:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-        {/* Hero copy */}
-        <div className="order-2 space-y-6 text-center xl:order-1 xl:text-left">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-accent">
-            Backend-Focused Full-Stack Engineer
-          </div>
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
 
-          <div className="space-y-3">
-            <h1 className="h2">
-              Building reliable backends
-              <br className="hidden sm:block" /> and full-stack web apps.
-            </h1>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto xl:mx-0">
-              I design and ship scalable backend systems and full-stack
-              applications using Node.js, NestJS, PostgreSQL, MongoDB, AWS, and
-              modern React / Next.js frontends.
-            </p>
+export default function ProfileCard() {
+  return (
+    <section className="hero" id="top">
+      <div className="wrap hero-grid">
+        {/* Copy */}
+        <div className="hero-copy">
+          <div className="kicker reveal">
+            {"// Backend-leaning Full-Stack Engineer"}
           </div>
-
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row xl:items-start xl:justify-start sm:gap-5">
-            <Link
-              href="#projects"
-              className="inline-flex h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-white shadow-lg shadow-accent/30 transition-transform hover:-translate-y-0.5 hover:shadow-xl"
-            >
-              View Projects
-            </Link>
-            <Link
-              href="#hire-us"
-              className="inline-flex h-11 items-center justify-center rounded-full border border-border px-6 text-sm font-medium text-foreground/80 transition-colors hover:border-accent hover:text-accent"
-            >
-              Let&apos;s work together
-            </Link>
+          <h1 className="reveal" style={{ "--delay": "60ms" }}>
+            Reliable <span className="accent">backends</span>,<br />
+            built to <span className="stroke">last</span>.
+          </h1>
+          <p className="hero-sub reveal" style={{ "--delay": "140ms" }}>
+            Hi, I&apos;m Sagar. I design and ship scalable backend systems and
+            full-stack web apps with Node.js, NestJS, PostgreSQL and AWS. I care
+            about clean architecture, clear APIs, and software that holds up
+            under real load.
+          </p>
+          <div className="hero-cta reveal" style={{ "--delay": "200ms" }}>
+            <a href="#projects" className="btn btn-primary">
+              view the work <ArrowIcon />
+            </a>
+            <a href="#hire" className="btn btn-ghost">
+              let&apos;s talk
+            </a>
           </div>
-
-          <div className="pt-2 flex items-center justify-center xl:justify-start gap-4">
-            <Socials
-              containerStyles="flex flex-wrap justify-center gap-4 sm:gap-5"
-              iconStyles="w-9 h-9 border border-accent/60 rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary transition-colors duration-300"
-            />
+          <div className="hero-socials reveal" style={{ "--delay": "260ms" }}>
+            <span className="lbl">find me →</span>
+            {SOCIALS.map((s) => (
+              <a
+                key={s.label}
+                className="tag"
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {s.label}
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Hero visual */}
-        <div className="order-1 flex justify-center xl:order-2">
-          <div className="relative inline-flex items-center justify-center rounded-2xl border border-accent/20 bg-gradient-to-b from-background/60 to-background/20 p-4 shadow-[0_0_60px_rgba(102,254,241,0.12)]">
-            <Photo />
+        {/* Visual */}
+        <div className="hero-visual">
+          <HeroTerminal />
+          <div
+            className="photo-frame reveal"
+            style={{ "--delay": "220ms", height: "320px" }}
+          >
+            <Image
+              src={siteData.cloudfront.photoUrl}
+              alt="Sagar Gohil"
+              fill
+              style={{ objectFit: "contain", objectPosition: "center bottom" }}
+              priority
+            />
+            <span className="photo-cap">~/sagar.png</span>
           </div>
         </div>
       </div>
 
-      {/* Metrics */}
-      <div className="mt-4 sm:mt-6">
+      <div className="wrap">
         <Stats />
       </div>
     </section>
   );
-};
-
-export default ProfileCard;
+}

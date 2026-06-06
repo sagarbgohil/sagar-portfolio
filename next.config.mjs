@@ -14,7 +14,7 @@ const nextConfig = {
             key: "Link",
             value: [
               '</.well-known/api-catalog>; rel="api-catalog"',
-              "</docs/api>; rel=\"service-doc\"",
+              '</docs/api>; rel="service-doc"',
             ].join(", "),
           },
         ],

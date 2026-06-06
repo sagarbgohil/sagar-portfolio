@@ -1,240 +1,67 @@
-"use client";
+import { siteData } from "@/lib/constants";
+const { email: EMAIL, resumeLink: RESUME } = siteData;
 
-import React, { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { fetchProxyV1 } from "@/lib/proxy";
-
-const HireUs = () => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    watch,
-    control,
-    formState: { errors, isSubmitting, isValid, isSubmitSuccessful },
-  } = useForm({ mode: "onTouched", criteriaMode: "all" });
-
-  const messageValue = watch("message") || "";
-  const [response, setResponse] = useState("");
-  const [submitError, setSubmitError] = useState("");
-
-  const handleFormSubmit = async (data) => {
-    try {
-      const res = await fetchProxyV1(`/misc/contact-us`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-
-      if (res.ok && result.message) {
-        setResponse(result.message);
-        reset();
-        setSubmitError("");
-        setTimeout(() => setResponse(""), 5000);
-      } else {
-        throw new Error(result.message || "Submission failed.");
-      }
-    } catch (error) {
-      setSubmitError(error.message);
-      setTimeout(() => setSubmitError(""), 5000);
-    }
-  };
-
+function ArrowIcon() {
   return (
-    <section id="hire-us" className="mx-auto max-w-5xl px-4 py-14">
-      {/* Section Header */}
-      <div className="mb-8 flex flex-col gap-3 text-center md:text-left">
-        <div className="inline-flex items-center justify-center md:justify-start">
-          <span className="rounded-full border border-accent/30 bg-accent/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-            #Contact
-          </span>
-        </div>
-        <div>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Let&apos;s work together
-          </h2>
-          <p className="mt-2 max-w-2xl text-sm sm:text-base text-muted-foreground">
-            Tell me about your product, stack, or backend challenges. I&apos;ll
-            review your message and get back to you as soon as possible.
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="arrow"
+    >
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+function ArrowUpRightIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7 17 17 7M8 7h9v9" />
+    </svg>
+  );
+}
+
+export default function HireUs() {
+  return (
+    <section className="section-pad" id="hire">
+      <div className="wrap">
+        <div className="hire-card reveal">
+          <div className="prompt">$ ./start-a-conversation.sh</div>
+          <h2>Let&apos;s build something that lasts.</h2>
+          <p>
+            Got a backend that needs to scale, an API to design, or a product to
+            ship? I&apos;m open to roles and freelance work, let&apos;s talk.
           </p>
-          <p className="text-sm text-muted-foreground">
-            Prefer email? Reach me at{" "}
-            <a
-              href="mailto:connect@sagargohil.dev"
-              className="font-medium text-accent hover:underline"
-            >
-              connect@sagargohil.dev
+          <div className="hire-cta">
+            <a className="btn btn-primary" href={`mailto:${EMAIL}`}>
+              {EMAIL} <ArrowIcon />
             </a>
-            .
-          </p>
+            <a
+              className="btn btn-ghost"
+              href={RESUME}
+              target="_blank"
+              rel="noreferrer"
+            >
+              view résumé <ArrowUpRightIcon />
+            </a>
+          </div>
         </div>
       </div>
-
-      {/* Feedback */}
-      {isSubmitSuccessful && response && (
-        <p className="text-center text-green-400 mb-4">{response}</p>
-      )}
-      {submitError && (
-        <p className="text-center text-red-500 mb-4">{submitError}</p>
-      )}
-
-      {/* Form */}
-      <form
-        onSubmit={handleSubmit(handleFormSubmit)}
-        className="space-y-6 rounded-2xl border border-border/80 bg-card/70 p-8 shadow-lg"
-        noValidate
-      >
-        {/* Grid Fields */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col gap-2">
-            <Input
-              placeholder="Name"
-              maxLength={50}
-              aria-invalid={!!errors.name}
-              {...register("name", {
-                required: "Name is required",
-                minLength: { value: 2, message: "At least 2 characters" },
-                maxLength: { value: 50, message: "Max 50 characters" },
-              })}
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm">{errors.name.message}</p>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <Input
-              type="email"
-              placeholder="Email"
-              maxLength={100}
-              aria-invalid={!!errors.email}
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: "Enter a valid email",
-                },
-              })}
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email.message}</p>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <Input
-              placeholder="Phone Number"
-              maxLength={12}
-              aria-invalid={!!errors.phone}
-              {...register("phone", {
-                required: "Phone number is required",
-                pattern: {
-                  value: /^[0-9]{10,12}$/,
-                  message: "10–12 digits only",
-                },
-              })}
-              onInput={(e) => {
-                e.target.value = e.target.value
-                  .replace(/[^0-9]/g, "")
-                  .slice(0, 12);
-              }}
-            />
-            {errors.phone && (
-              <p className="text-red-500 text-sm">{errors.phone.message}</p>
-            )}
-          </div>
-
-          {/* Service Select */}
-          <div className="flex flex-col gap-2">
-            <Controller
-              name="service"
-              control={control}
-              rules={{ required: "Service is required" }}
-              render={({ field }) => (
-                <Select
-                  onValueChange={field.onChange}
-                  value={field.value}
-                  defaultValue={field.value}
-                >
-                  <SelectTrigger
-                    className="w-full"
-                    aria-label="Select a service"
-                  >
-                    <SelectValue placeholder="Select a service" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Services</SelectLabel>
-                      <SelectItem value="Backend Development">
-                        Backend
-                      </SelectItem>
-                      <SelectItem value="Frontend Development">
-                        Frontend
-                      </SelectItem>
-                      <SelectItem value="Web App Development">
-                        Fullstack
-                      </SelectItem>
-                      <SelectItem value="Bug Fixing">Bug Fixing</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              )}
-            />
-            {errors.service && (
-              <p className="text-red-500 text-sm">{errors.service.message}</p>
-            )}
-          </div>
-        </div>
-
-        {/* Message Box */}
-        <div className="flex flex-col gap-2">
-          <Textarea
-            placeholder="Type your message here..."
-            className="h-[200px]"
-            maxLength={1000}
-            aria-invalid={!!errors.message}
-            {...register("message", {
-              required: "Message is required",
-              minLength: { value: 50, message: "Minimum 50 characters" },
-              maxLength: { value: 1000, message: "Max 1000 characters" },
-            })}
-          />
-          <div className="text-sm text-muted-foreground text-right">
-            {messageValue.length} / 1000 characters
-          </div>
-          {errors.message && (
-            <p className="text-red-500 text-sm">{errors.message.message}</p>
-          )}
-        </div>
-
-        {/* Submit Button */}
-        <div className="text-center pt-2">
-          <Button
-            type="submit"
-            size="md"
-            className="w-[80%] md:w-[40%]"
-            disabled={isSubmitting || !isValid}
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </Button>
-        </div>
-      </form>
     </section>
   );
-};
-
-export default HireUs;
+}

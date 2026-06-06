@@ -33,9 +33,9 @@ const Nav = () => {
             key={link.href}
             href={link.href}
             scroll={true}
-            className={`capitalize font-medium hover:text-accent transition-all ${
+            className={`hover:text-accent font-medium capitalize transition-all ${
               pathname === "/" && activeHash === link.href
-                ? "text-accent border-b-2 border-accent"
+                ? "text-accent border-accent border-b-2"
                 : ""
             }`}
           >

@@ -1,32 +1,20 @@
-import Link from "next/link";
-import Socials from "./Socials";
+import { SOCIALS } from "@/lib/constants";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="border-t border-border py-8 mt-12 bg-background/80">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-        {/* Left: copyright */}
-        <div className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Sagar Gohil. All rights reserved.
-        </div>
-
-        {/* Center: socials (optional) */}
-        <div className="flex justify-center">
-          <Socials
-            containerStyles="flex gap-4"
-            iconStyles="w-8 h-8 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary transition-all duration-300"
-          />
-        </div>
-
-        {/* Right: nav links (optional) */}
-        <div className="flex gap-6 text-sm text-muted-foreground">
-          <Link href="#top">Home</Link>
-          <Link href="#projects">Projects</Link>
-          <Link href="#hire-us">Hire Us</Link>
+    <footer className="site-footer">
+      <div className="wrap footer-inner">
+        <span>
+          © {new Date().getFullYear()} Sagar Gohil · built in Gujarat, India
+        </span>
+        <div className="footer-links">
+          {SOCIALS.map((s) => (
+            <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
+              {s.label}↗
+            </a>
+          ))}
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

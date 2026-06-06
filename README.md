@@ -1,73 +1,54 @@
-# Sagar Gohil Project
+# sagargohil.dev
 
-Welcome to the **Sagar Gohil Project** repository!
+Personal portfolio site for Sagar Gohil — backend-leaning full-stack engineer.
 
-## Features
+**Live:** [sagargohil.dev](https://www.sagargohil.dev)
 
-- **Feature 1**: Home Page
+## Stack
 
-## Installation
+- **Next.js 15** — App Router
+- **Tailwind CSS v4** — class-based dark mode (`html.dark`)
+- **Fonts** — Space Grotesk · Hanken Grotesk · JetBrains Mono (via `next/font/google`)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/sagarbgohil/sagar-portfolio.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd sagar-portfolio
-   ```
-3. Install dependencies:
-   ```bash
-   npm i
-   ```
+## Getting Started
 
-## Usage
+```bash
+git clone https://github.com/sagarbgohil/sagar-portfolio.git
+cd sagar-portfolio
+npm install
+npm run dev
+```
 
-1. Start the application:
-   ```bash
-   npm run dev
-   ```
-2. Open your browser and navigate to:
-   ```
-   http://localhost:[port]
-   ```
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Project Structure
 
 ```
-/src
-  ├── components/
-  ├── services/
-  ├── utils/
-  └── [other folders]
-/tests
-README.md
-package.json
+app/
+  layout.jsx        # root layout — fonts, dark class, RevealObserver
+  page.jsx          # page composition only
+  globals.css       # full design system (CSS vars + all component classes)
+components/         # UI components (server by default, "use client" where needed)
+lib/
+  constants.js      # all site data — single source of truth
+  utils.js          # cn() helper only
+public/             # static assets
 ```
 
-## Contributing
+## Scripts
 
-Contributions are welcome! Please follow these steps:
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start dev server (Turbopack) |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run format` | Format with Prettier |
+| `npm run format:check` | Check formatting |
 
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add feature-name"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a pull request.
+## Conventions
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+See [CLAUDE.md](CLAUDE.md) for full coding and data conventions.
 
 ## Contact
 
-For any inquiries, please contact [your email or other contact information].
+[connect@sagargohil.dev](mailto:connect@sagargohil.dev)

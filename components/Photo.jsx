@@ -4,14 +4,7 @@ import { siteData } from "@/lib/constants";
 
 const Photo = () => {
   return (
-    <div
-      className="
-          relative flex items-center justify-center
-          w-[160px] h-[160px]
-          md:w-[200px] md:h-[200px]
-          lg:w-[298px] lg:h-[298px]
-        "
-    >
+    <div className="relative flex h-[160px] w-[160px] items-center justify-center md:h-[200px] md:w-[200px] lg:h-[298px] lg:w-[298px]">
       <Image
         src={siteData.cloudfront.photoUrl}
         alt="Sagar Gohil"
@@ -23,7 +16,7 @@ const Photo = () => {
       />
 
       <svg
-        className="absolute top-0 left-0 pointer-events-none"
+        className="pointer-events-none absolute top-0 left-0"
         fill="transparent"
         viewBox="0 0 506 506"
         xmlns="http://www.w3.org/2000/svg"

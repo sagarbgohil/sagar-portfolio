@@ -4,7 +4,7 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div className="w-[70px] h-[70px] relative">
+    <div className="relative h-[70px] w-[70px]">
       <Link href="/">
         <h1 className="hidden">
           Sagar Gohil | Software Engineer and Tech Enthusiast
@@ -17,7 +17,7 @@ const Logo = () => {
           height={70}
           sizes="70px"
           priority
-          className="object-contain w-full h-full block dark:hidden"
+          className="block h-full w-full object-contain dark:hidden"
         />
 
         {/* Dark theme logo */}
@@ -28,7 +28,7 @@ const Logo = () => {
           height={70}
           sizes="70px"
           priority
-          className="object-contain w-full h-full hidden dark:block"
+          className="hidden h-full w-full object-contain dark:block"
         />
       </Link>
     </div>

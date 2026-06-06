@@ -2,11 +2,11 @@
 
 import { useEffect } from "react";
 import {
-  about,
-  experience,
-  education,
-  projects,
-  skills,
+  ABOUT,
+  EXPERIENCE,
+  EDUCATION,
+  PROJECTS,
+  SKILL_GROUPS,
 } from "@/lib/constants";
 
 const tools = [
@@ -16,33 +16,32 @@ const tools = [
       "Returns the list of projects Sagar Gohil has worked on, including title, description, tech stack, and link.",
     inputSchema: { type: "object", properties: {}, required: [] },
     execute: async () =>
-      projects.items.map(({ index, title, description, techStack, link }) => ({
+      PROJECTS.map(({ index, title, year, description, stack, link }) => ({
         index,
         title,
+        year,
         description,
-        techStack,
+        techStack: stack,
         link,
       })),
   },
   {
     name: "get_skills",
-    description: "Returns Sagar's technical skills as a list of names.",
+    description: "Returns Sagar's technical skills grouped by category.",
     inputSchema: { type: "object", properties: {}, required: [] },
-    execute: async () => ({
-      description: skills.description,
-      skills: skills.items.map((s) => s.name),
-    }),
+    execute: async () =>
+      SKILL_GROUPS.map(({ name, items }) => ({ group: name, items })),
   },
   {
     name: "get_experience",
     description: "Returns Sagar's work experience history.",
     inputSchema: { type: "object", properties: {}, required: [] },
     execute: async () =>
-      experience.items.map(({ title, bottom, top, description }) => ({
+      EXPERIENCE.map(({ when, title, where, desc }) => ({
         title,
-        company: bottom,
-        period: top,
-        description,
+        company: where,
+        period: when,
+        description: desc,
       })),
   },
   {
@@ -50,11 +49,11 @@ const tools = [
     description: "Returns Sagar's educational background.",
     inputSchema: { type: "object", properties: {}, required: [] },
     execute: async () =>
-      education.items.map(({ title, bottom, top, description }) => ({
+      EDUCATION.map(({ when, title, where, desc }) => ({
         title,
-        institution: bottom,
-        period: top,
-        description,
+        institution: where,
+        period: when,
+        description: desc,
       })),
   },
   {
@@ -63,8 +62,9 @@ const tools = [
       "Returns Sagar's profile summary including name, email, location, and experience.",
     inputSchema: { type: "object", properties: {}, required: [] },
     execute: async () => ({
-      description: about.description,
-      details: Object.fromEntries(about.items.map((i) => [i.name, i.value])),
+      summary: `${ABOUT.leadStart} ${ABOUT.leadAmber}`,
+      body: ABOUT.body,
+      details: Object.fromEntries(ABOUT.meta.map((m) => [m.k, m.v])),
     }),
   },
   {
@@ -75,8 +75,15 @@ const tools = [
       type: "object",
       properties: {
         name: { type: "string", description: "Your full name" },
-        email: { type: "string", format: "email", description: "Your email address" },
-        phone: { type: "string", description: "Your phone number (10–12 digits)" },
+        email: {
+          type: "string",
+          format: "email",
+          description: "Your email address",
+        },
+        phone: {
+          type: "string",
+          description: "Your phone number (10–12 digits)",
+        },
         service: {
           type: "string",
           enum: [
@@ -113,9 +120,7 @@ export default function WebMCP() {
   useEffect(() => {
     if (typeof navigator === "undefined" || !navigator.modelContext) return;
 
-    navigator.modelContext
-      .provideContext({ tools })
-      .catch(() => {});
+    navigator.modelContext.provideContext({ tools }).catch(() => {});
   }, []);
 
   return null;

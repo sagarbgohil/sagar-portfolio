@@ -20,7 +20,7 @@ function TabsList({ className, ...props }) {
     <TabsPrimitive.List
       data-slot="tabs-list"
       className={cn(
-        "inline-flex h-auto rounded-md p-1 text-primary",
+        "text-primary inline-flex h-auto rounded-md p-1",
         className
       )}
       {...props}
@@ -33,7 +33,7 @@ function TabsTrigger({ className, ...props }) {
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "inline-flex items-center w-full bg-[#27272c] justify-center whitespace-nowrap text-white rounded-lg p-3 text-base font-medium ring-offset-white transition-all disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-accent data-[state=active]:text-primary data-[state=active]:font-bold data-[state=active]:shadow-sm",
+        "data-[state=active]:bg-accent data-[state=active]:text-primary inline-flex w-full items-center justify-center rounded-lg bg-[#27272c] p-3 text-base font-medium whitespace-nowrap text-white ring-offset-white transition-all disabled:pointer-events-none disabled:opacity-50 data-[state=active]:font-bold data-[state=active]:shadow-sm",
         className
       )}
       {...props}
@@ -46,7 +46,7 @@ function TabsContent({ className, ...props }) {
     <TabsPrimitive.Content
       data-slot="tabs-content"
       className={cn(
-        "min-h-[480px ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300",
+        "min-h-[480px ring-offset-white focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 focus-visible:outline-none dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300",
         className
       )}
       {...props}
